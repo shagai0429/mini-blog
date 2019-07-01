@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .header {
+      background-color: #222;
+      height: 50px;
+      display: flex;
+      align-items: center;
+    }
+
+    .header__first,
+    .header__last {
+      display: flex;
+      align-items: center;
+    }
+    .header__container {
+      width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .logo__img {
+      margin-right: 10px;
+      height: 34px;
+    }
+
+    .logo__text {
+      font-size: 1.25em;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+
+    .version {
+      font-size: 14px;
+      color: #fff;
+      font-family: sans-serif;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+
+    .version:hover {
+      opacity: 0.8;
+    }
+
+    .menu {
+      font-family: sans-serif;
+      display: flex;
+    }
+
+    .menu__item {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 16px;
+      padding: 6px 10px;
+    }
+
+    .menu__item:hover {
+      color: #fff;
+    }
+
+    .search {
+      width: 200px;
+      display: flex;
+      align-items: center;
+      background-color: hsla(17, 71%, 82%, .25);
+      border-radius: 20px;
+      margin-left: 10px;
+      height: 32px;
+      transition: width 0.5s;
+    }
+
+    .search--active {
+      width: 260px;
+      background-color: transparent;
+    }
+
+    .search__input {
+      background-color: transparent;
+      border: 0;
+      color: #fff;
+      flex-grow: 1;
+    }
+
+    .search__input::placeholder {
+      color: #fff;
+    }
+
+    .search__input:focus {
+      outline: 0;
+    }
+
+    .search__icon svg {
+      height: 12px;
+      color: #fff;
+      padding: 0 13px;
+    }
+  </style>
+
+  <script>
+    function handleBlur() {
+      document.getElementById('search').classList.remove('search--active');
+      // document.getElementById('search').style.width = null;
+    }
+
+    function handleFocus() {
+      document.getElementById('search').classList.add('search--active');
+      // document.getElementById('search').style.width = '250px';
+    }
+
+
+  </script>
+
+</head>
+
+<body>
+  <div class="header">
+    <div class="header__container">
+      <div class="header__first">
+        <a href="/" class="logo">
+          <img src="https://facebook.github.io/react-native/img/header_logo.png" class="logo__img" />
+          <span class="logo__text">React Native</span>
+        </a>
+
+        <a href="/" class="version">0.59</a>
+      </div>
+
+      <div class="header__last">
+        <div class="menu">
+          <a href="#" class="menu__item">Docs</a>
+          <a href="#" class="menu__item">API</a>
+          <a href="#" class="menu__item">Community</a>
+          <a href="#" class="menu__item">Blog</a>
+        </div>
+
+        <div class="search" id="search"> 
+          <span class="search__icon">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" role="img"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-search fa-w-16 fa-3x">
+              <path fill="currentColor"
+                d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                class=""></path>
+            </svg>
+          </span>
+          <input class="search__input" onfocus="handleFocus()" onblur="handleBlur()" placeholder="Search" />
+        </div>
+
+        <div class="menu">
+          <a href="#" class="menu__item">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
